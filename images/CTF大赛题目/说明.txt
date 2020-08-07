@@ -1,0 +1,4 @@
+rain.wav通过Audacity软件查看频谱, 能够看到频谱最后部分有红白文字的压缩包密码(放大频谱)
+猜出是感叹号+冒号+右括号 passwd：CONGR4Ts!😃, 解压后发现一个图片flag10.jpg
+通过foremost -i flag10.jpg分离出两个图片 得到part1
+同时文件的元数据中有part2

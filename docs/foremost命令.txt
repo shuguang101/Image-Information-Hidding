@@ -1,0 +1,13 @@
+binwalk: 文件还原分离的神器
+
+formost是一个基于文件头和尾部信息以及文件的内建数据结构恢复文件的命令行工具。这个过程通常叫做数据挖掘（data carvubg）。
+针对 Linux 下的 ext 文件系统来说，常用的 Linux 文件删除恢复工具有 debugfs、ext3grep、extundelete 等
+
+foremost可以处理图像文件，例如由dd，Safeback，Encase等生成的图像文件，或直接在驱动器上。
+页眉和页脚可以由配置文件指定，也可以使用命令行开关指定内置文件类型。
+这些内置类型查看给定文件格式的数据结构，从而实现更可靠，更快速的恢复。
+在数字取证中和CTF中常用来恢复、分离文件。
+
+foremost:
+    kail linux已经预装
+    ubuntu sudo apt install foremost
