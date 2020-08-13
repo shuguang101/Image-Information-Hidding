@@ -2,14 +2,20 @@ import random
 from bitarray import bitarray
 
 
-random.seed(123456)
-print(random.sample(range(10),5))
+def similarity(bytes1: bytes, bytes2: bytes):
+    if len(bytes1) != len(bytes2):
+        return 0.0
 
-a= [1,2,3,4,5]
-random.shuffle(a)
-print(a)
+    b1 = bitarray(endian='little')
+    b2 = bitarray(endian='little')
+    b1.frombytes(bytes1)
+    b2.frombytes(bytes2)
 
-bit_data_list = [1,0,0,1,1]
-bit_array = bitarray(bit_data_list,endian='little')
-# bit_array.append(bit_data_list)
-print(bit_array)
+    same_bit = (~(b1 ^ b2)).count()
+    total_bit = len(bytes1) * 8
+
+    return same_bit / total_bit
+
+
+print(similarity(b"aa", b"ab"))
+print(similarity(b"aaa", b"ab"))
